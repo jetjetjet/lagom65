@@ -1,0 +1,7 @@
+# Kconfig untuk shield Lagom 65%
+#
+# Copyright (c) 2024 jetjetjet
+# SPDX-License-Identifier: MIT
+
+config SHIELD_LAGOM65
+    def_bool $(shields_list_contains,lagom65)

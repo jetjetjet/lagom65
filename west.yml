@@ -1,11 +1,25 @@
+# manifest:
+#   remotes:
+#     - name: remote-name
+#       url-base: https://github.com/remote-name
+#   projects:
+#     # Together with the above defined remote, this refers to a module located at
+#     # https://github.com/remote-name/repository-name
+#     - name: repository-name
+#       remote: remote-name
+#       # This points to a west manifest file in the remote module for further imports
+#       import: west.yml
+
+# west.yml (Tidak perlu diubah)
 manifest:
   remotes:
-    - name: remote-name
-      url-base: https://github.com/remote-name
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
   projects:
-    # Together with the above defined remote, this refers to a module located at
-    # https://github.com/remote-name/repository-name
-    - name: repository-name
-      remote: remote-name
-      # This points to a west manifest file in the remote module for further imports
-      import: west.yml
+  - name: zmk
+    revision: main
+  - name: zmk-config
+    path: config
+  - name: zmk-keyboard-lagom65 # Nama repositori modul Anda
+    path: modules/lagom65      # Path lokal ke modul Anda
+    url: https://github.com/jetjetjet/zmk-lagom65 # URL repositori modul Anda
